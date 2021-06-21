@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rPN-SJ-e1I">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--Seach Map Vc-->
+        <scene sceneID="e0k-Vs-YLa">
+            <objects>
+                <viewController id="rPN-SJ-e1I" customClass="SMSeachMapVc" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="P8m-Jr-m5h"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZYS-Zd-Bn8"/>
+                    </layoutGuides>
+                    <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="qF5-YA-Feg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button hidden="YES" opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vAZ-hF-5E6" userLabel="遮盖">
+                                <rect key="frame" x="0.0" y="128" width="600" height="472"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <searchBar contentMode="redraw" text="" placeholder="请输入地图标题或编号" backgroundImage="bg_login_textfield" translatesAutoresizingMaskIntoConstraints="NO" id="Qbg-Kj-pY5">
+                                <rect key="frame" x="15" y="74" width="570" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="b18-Y9-aqq"/>
+                                </constraints>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="rPN-SJ-e1I" id="4q9-Xc-PPX"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="MvB-0o-HoU">
+                                <rect key="frame" x="0.0" y="118" width="600" height="482"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="historyCell" id="zgc-Q9-CvO">
+                                        <rect key="frame" x="0.0" y="22" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zgc-Q9-CvO" id="0yg-aM-eFv">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="82z-dO-LKx">
+                                <rect key="frame" x="240" y="530" width="120" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="Vir-q6-BFB"/>
+                                    <constraint firstAttribute="height" constant="50" id="jyl-Ax-GY6"/>
+                                </constraints>
+                                <state key="normal" title="清空搜索记录" backgroundImage="bg_login_textfield">
+                                    <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="clearHistroy:" destination="rPN-SJ-e1I" eventType="touchUpInside" id="K0Y-ja-OzD"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="MvB-0o-HoU" firstAttribute="leading" secondItem="qF5-YA-Feg" secondAttribute="leading" id="5sB-YG-uLj"/>
+                            <constraint firstItem="ZYS-Zd-Bn8" firstAttribute="top" secondItem="82z-dO-LKx" secondAttribute="bottom" constant="20" id="QVO-mX-SLA"/>
+                            <constraint firstItem="Qbg-Kj-pY5" firstAttribute="top" secondItem="qF5-YA-Feg" secondAttribute="top" constant="74" id="T71-wj-eNy"/>
+                            <constraint firstAttribute="trailing" secondItem="MvB-0o-HoU" secondAttribute="trailing" id="Zyr-aK-C7w"/>
+                            <constraint firstItem="vAZ-hF-5E6" firstAttribute="top" secondItem="Qbg-Kj-pY5" secondAttribute="bottom" constant="10" id="fTg-xy-jgs"/>
+                            <constraint firstAttribute="trailing" secondItem="Qbg-Kj-pY5" secondAttribute="trailing" constant="15" id="jsL-hO-RA4"/>
+                            <constraint firstAttribute="bottom" secondItem="MvB-0o-HoU" secondAttribute="bottom" id="qSk-tD-9dx"/>
+                            <constraint firstItem="82z-dO-LKx" firstAttribute="centerX" secondItem="qF5-YA-Feg" secondAttribute="centerX" id="snv-G9-943"/>
+                            <constraint firstItem="Qbg-Kj-pY5" firstAttribute="leading" secondItem="qF5-YA-Feg" secondAttribute="leading" constant="15" id="uuF-3o-DFu"/>
+                            <constraint firstItem="vAZ-hF-5E6" firstAttribute="leading" secondItem="qF5-YA-Feg" secondAttribute="leading" id="vqA-9J-8U6"/>
+                            <constraint firstItem="MvB-0o-HoU" firstAttribute="top" secondItem="Qbg-Kj-pY5" secondAttribute="bottom" id="yIs-qr-zQq"/>
+                            <constraint firstAttribute="trailing" secondItem="vAZ-hF-5E6" secondAttribute="trailing" id="zUQ-2A-jTe"/>
+                            <constraint firstAttribute="bottom" secondItem="vAZ-hF-5E6" secondAttribute="bottom" id="zjk-GF-sRm"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="clearHistory" destination="82z-dO-LKx" id="9KA-xz-l0S"/>
+                        <outlet property="cover" destination="vAZ-hF-5E6" id="mpe-G1-DoY"/>
+                        <outlet property="searchBar" destination="Qbg-Kj-pY5" id="mc2-bS-oO7"/>
+                        <outlet property="tableView" destination="MvB-0o-HoU" id="tOA-zC-ZqK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JDT-Uq-YWe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-384" y="850"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bg_login_textfield" width="9" height="11"/>
+    </resources>
+</document>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bhB-Nn-9Qw">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Bian JiVC View Controller-->
+        <scene sceneID="fZz-Zd-BUn">
+            <objects>
+                <viewController id="bhB-Nn-9Qw" customClass="SMBianJiVCViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9GJ-6n-A75"/>
+                        <viewControllerLayoutGuide type="bottom" id="Wg9-BX-mu1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6JI-DI-309">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I80-mK-UhH">
+                                <rect key="frame" x="20" y="65" width="560" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="185" id="SL3-4j-xeM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="SL3-4j-xeM"/>
+                                    </mask>
+                                </variation>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vdp-fz-ZeK">
+                                <rect key="frame" x="20" y="140" width="560" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="2Ld-yP-5WZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="昵称(15字以内)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QtD-hP-3F6">
+                                <rect key="frame" x="20" y="40" width="95" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="个人签名(15字以内)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CJM-Rf-YLR">
+                                <rect key="frame" x="20" y="115" width="123" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="vdp-fz-ZeK" firstAttribute="leading" secondItem="6JI-DI-309" secondAttribute="leadingMargin" id="42W-FI-w56"/>
+                            <constraint firstItem="QtD-hP-3F6" firstAttribute="top" secondItem="9GJ-6n-A75" secondAttribute="bottom" constant="20" id="E19-bc-oAm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="I80-mK-UhH" secondAttribute="trailing" id="QrB-V4-co0"/>
+                            <constraint firstItem="CJM-Rf-YLR" firstAttribute="leading" secondItem="6JI-DI-309" secondAttribute="leadingMargin" id="V05-ih-N2l"/>
+                            <constraint firstItem="CJM-Rf-YLR" firstAttribute="top" secondItem="I80-mK-UhH" secondAttribute="bottom" constant="20" id="XPf-st-dv0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vdp-fz-ZeK" secondAttribute="trailing" id="hYd-vJ-GPg"/>
+                            <constraint firstItem="QtD-hP-3F6" firstAttribute="leading" secondItem="6JI-DI-309" secondAttribute="leadingMargin" id="ihf-tC-BXn"/>
+                            <constraint firstItem="I80-mK-UhH" firstAttribute="top" secondItem="QtD-hP-3F6" secondAttribute="bottom" constant="8" id="lVv-ev-sux"/>
+                            <constraint firstItem="I80-mK-UhH" firstAttribute="leading" secondItem="6JI-DI-309" secondAttribute="leadingMargin" id="os2-pu-iML"/>
+                            <constraint firstItem="vdp-fz-ZeK" firstAttribute="top" secondItem="CJM-Rf-YLR" secondAttribute="bottom" constant="8" id="yML-Ui-NCv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textFiled" destination="I80-mK-UhH" id="1h9-Er-x1f"/>
+                        <outlet property="textView" destination="vdp-fz-ZeK" id="FcC-YZ-oiL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Gc-iY-hY0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="259" y="399"/>
+        </scene>
+    </scenes>
+</document>

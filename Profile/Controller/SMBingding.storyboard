@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vsQ-97-b9q">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Binding Table View Controller-->
+        <scene sceneID="Eap-Be-jZW">
+            <objects>
+                <tableViewController id="vsQ-97-b9q" customClass="SMBindingTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="EMV-mF-d1n">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="jEV-OX-hsQ" customClass="SMBingdingCell">
+                                <rect key="frame" x="0.0" y="28" width="600" height="60"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jEV-OX-hsQ" id="DlF-yA-54s">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="59.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hlG-16-TVU">
+                                            <rect key="frame" x="68" y="19.5" width="42" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wpT-Mi-Ads">
+                                            <rect key="frame" x="502" y="10" width="80" height="40"/>
+                                            <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="0OT-f7-E3A"/>
+                                                <constraint firstAttribute="width" constant="80" id="3YB-n8-Pn6"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <state key="normal" title="绑定">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="bingdingBtnClick:" destination="vsQ-97-b9q" eventType="touchUpInside" id="Cm1-AV-lup"/>
+                                            </connections>
+                                        </button>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gr1-dy-PwJ">
+                                            <rect key="frame" x="18" y="10" width="40" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="FX4-Be-SIJ"/>
+                                                <constraint firstAttribute="width" constant="40" id="QVr-SI-N4y"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Gr1-dy-PwJ" firstAttribute="leading" secondItem="DlF-yA-54s" secondAttribute="leadingMargin" constant="10" id="5it-Yy-T1w"/>
+                                        <constraint firstItem="wpT-Mi-Ads" firstAttribute="centerY" secondItem="DlF-yA-54s" secondAttribute="centerY" id="Bc5-rM-wBI"/>
+                                        <constraint firstItem="hlG-16-TVU" firstAttribute="leading" secondItem="Gr1-dy-PwJ" secondAttribute="trailing" constant="10" id="ED9-K5-EPg"/>
+                                        <constraint firstItem="Gr1-dy-PwJ" firstAttribute="centerY" secondItem="DlF-yA-54s" secondAttribute="centerY" id="dOd-9V-adV"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="wpT-Mi-Ads" secondAttribute="trailing" constant="10" id="vI2-ZL-Nb6"/>
+                                        <constraint firstItem="hlG-16-TVU" firstAttribute="centerY" secondItem="DlF-yA-54s" secondAttribute="centerY" id="xBH-x4-Aai"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="bingdingBtn" destination="wpT-Mi-Ads" id="c7m-ko-2Pl"/>
+                                    <outlet property="img" destination="Gr1-dy-PwJ" id="Vro-OT-yAr"/>
+                                    <outlet property="laber" destination="hlG-16-TVU" id="RnT-zj-hJC"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="vsQ-97-b9q" id="6nL-u3-vNu"/>
+                            <outlet property="delegate" destination="vsQ-97-b9q" id="Ow2-iz-UaG"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UxB-zi-xUh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="62" y="257"/>
+        </scene>
+    </scenes>
+</document>

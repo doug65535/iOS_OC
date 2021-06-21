@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HEJ-06-Pah">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--SeachTB View Controller-->
+        <scene sceneID="dMK-aX-lvU">
+            <objects>
+                <viewController id="HEJ-06-Pah" customClass="SMSeachTBViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5o0-bQ-B95"/>
+                        <viewControllerLayoutGuide type="bottom" id="7fL-RQ-aUa"/>
+                    </layoutGuides>
+                    <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="1wW-qs-j1C">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" text="" placeholder="请输入标注点关键字或拼音" backgroundImage="bg_login_textfield" translatesAutoresizingMaskIntoConstraints="NO" id="9aA-hi-QkJ">
+                                <rect key="frame" x="15" y="64" width="570" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="nAN-Qk-fRx"/>
+                                </constraints>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="HEJ-06-Pah" id="WTu-I7-m7f"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="d4r-uz-fKk">
+                                <rect key="frame" x="0.0" y="118" width="600" height="482"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <button hidden="YES" opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bQE-eh-jwo" userLabel="遮盖">
+                                <rect key="frame" x="0.0" y="118" width="600" height="482"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="d4r-uz-fKk" firstAttribute="leading" secondItem="1wW-qs-j1C" secondAttribute="leading" id="17O-K8-UaO"/>
+                            <constraint firstItem="9aA-hi-QkJ" firstAttribute="leading" secondItem="1wW-qs-j1C" secondAttribute="leading" constant="15" id="2sn-is-uxP"/>
+                            <constraint firstAttribute="trailing" secondItem="d4r-uz-fKk" secondAttribute="trailing" id="4kH-lP-JPd"/>
+                            <constraint firstItem="bQE-eh-jwo" firstAttribute="top" secondItem="9aA-hi-QkJ" secondAttribute="bottom" constant="10" id="7xQ-su-vCe"/>
+                            <constraint firstAttribute="bottom" secondItem="bQE-eh-jwo" secondAttribute="bottom" id="AGP-tU-scH"/>
+                            <constraint firstAttribute="trailing" secondItem="bQE-eh-jwo" secondAttribute="trailing" id="BQ4-Wg-Z5Z"/>
+                            <constraint firstAttribute="bottom" secondItem="d4r-uz-fKk" secondAttribute="bottom" id="QFe-2F-qQA"/>
+                            <constraint firstItem="9aA-hi-QkJ" firstAttribute="top" secondItem="1wW-qs-j1C" secondAttribute="top" id="jvz-sO-uwY"/>
+                            <constraint firstItem="d4r-uz-fKk" firstAttribute="top" secondItem="9aA-hi-QkJ" secondAttribute="bottom" constant="10" id="m8f-ci-5Ss"/>
+                            <constraint firstAttribute="trailing" secondItem="9aA-hi-QkJ" secondAttribute="trailing" constant="15" id="nIi-2E-NXV"/>
+                            <constraint firstItem="9aA-hi-QkJ" firstAttribute="top" secondItem="1wW-qs-j1C" secondAttribute="top" constant="64" id="ox2-uI-eg9"/>
+                            <constraint firstItem="9aA-hi-QkJ" firstAttribute="top" secondItem="1wW-qs-j1C" secondAttribute="top" id="pWe-oI-4Di"/>
+                            <constraint firstItem="bQE-eh-jwo" firstAttribute="leading" secondItem="1wW-qs-j1C" secondAttribute="leading" id="sEj-4h-AXN"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="jvz-sO-uwY"/>
+                                <exclude reference="pWe-oI-4Di"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="cover" destination="bQE-eh-jwo" id="wWZ-Qc-j7j"/>
+                        <outlet property="searchBar" destination="9aA-hi-QkJ" id="LEp-Jw-mYD"/>
+                        <outlet property="tableView" destination="d4r-uz-fKk" id="1xY-vC-Q6E"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KfR-Ca-Sza" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="233" y="-245"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bg_login_textfield" width="9" height="11"/>
+    </resources>
+</document>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="DaT-Kp-d0S">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Offline Map View Controller-->
+        <scene sceneID="NgO-pl-C5j">
+            <objects>
+                <viewController id="DaT-Kp-d0S" customClass="SMOfflineMapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dAU-7i-AJc"/>
+                        <viewControllerLayoutGuide type="bottom" id="chd-by-Fa8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="c05-15-fH5">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="XAs-Lw-gKm">
+                                <rect key="frame" x="10" y="30" width="580" height="29"/>
+                                <segments>
+                                    <segment title="下载管理"/>
+                                    <segment title="城市列表"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segementChange:" destination="DaT-Kp-d0S" eventType="valueChanged" id="qDw-Rr-ul1"/>
+                                </connections>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aWj-xh-Fyh">
+                                <rect key="frame" x="0.0" y="63" width="600" height="537"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="5Nu-gQ-v5e" customClass="ShopTypeCell">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5Nu-gQ-v5e" id="ygx-xl-TEB">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5aD-FJ-MtE">
+                                <rect key="frame" x="0.0" y="63" width="600" height="537"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TXP-LE-rnk">
+                                        <rect key="frame" x="10" y="55" width="580" height="135"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="332" id="ENo-tc-90O"/>
+                                            <constraint firstAttribute="height" constant="135" id="sn6-F5-jhT"/>
+                                        </constraints>
+                                        <string key="text">暂无现在，点击“城市列表”进行下载吧！     使用离线地图的好处：          1.可节约使用流量，无需网络请求地理底图 
+2.网络不佳也能顺畅浏览地图</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="ENo-tc-90O"/>
+                                            </mask>
+                                        </variation>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="TXP-LE-rnk" firstAttribute="leading" secondItem="5aD-FJ-MtE" secondAttribute="leading" constant="10" id="2lX-Qc-IGG"/>
+                                    <constraint firstAttribute="trailing" secondItem="TXP-LE-rnk" secondAttribute="trailing" constant="10" id="5uA-e3-c0Y"/>
+                                    <constraint firstItem="TXP-LE-rnk" firstAttribute="top" secondItem="5aD-FJ-MtE" secondAttribute="top" constant="55" id="VjQ-lb-zqD"/>
+                                    <constraint firstItem="TXP-LE-rnk" firstAttribute="centerX" secondItem="5aD-FJ-MtE" secondAttribute="centerX" id="XOl-yq-Tmm"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="aWj-xh-Fyh" secondAttribute="trailing" id="59F-OM-LX4"/>
+                            <constraint firstItem="XAs-Lw-gKm" firstAttribute="top" secondItem="dAU-7i-AJc" secondAttribute="bottom" id="8c8-gi-hTy"/>
+                            <constraint firstItem="aWj-xh-Fyh" firstAttribute="top" secondItem="XAs-Lw-gKm" secondAttribute="bottom" id="BKf-CM-Rgc"/>
+                            <constraint firstAttribute="trailing" secondItem="5aD-FJ-MtE" secondAttribute="trailing" id="Eo4-Qe-rzh"/>
+                            <constraint firstItem="aWj-xh-Fyh" firstAttribute="leading" secondItem="c05-15-fH5" secondAttribute="leading" id="Gtx-Su-L7S"/>
+                            <constraint firstItem="XAs-Lw-gKm" firstAttribute="top" secondItem="dAU-7i-AJc" secondAttribute="bottom" constant="10" id="HOa-Pf-CIB"/>
+                            <constraint firstItem="5aD-FJ-MtE" firstAttribute="top" secondItem="XAs-Lw-gKm" secondAttribute="bottom" constant="5" id="JUc-CB-Ehp"/>
+                            <constraint firstItem="chd-by-Fa8" firstAttribute="top" secondItem="aWj-xh-Fyh" secondAttribute="bottom" id="PSh-Bd-8RN"/>
+                            <constraint firstItem="aWj-xh-Fyh" firstAttribute="leading" secondItem="c05-15-fH5" secondAttribute="leadingMargin" constant="-20" id="RwX-Qx-kxO"/>
+                            <constraint firstItem="XAs-Lw-gKm" firstAttribute="leading" secondItem="c05-15-fH5" secondAttribute="leadingMargin" constant="-10" id="cor-Kp-d3y"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="XAs-Lw-gKm" secondAttribute="trailing" constant="-10" id="f5g-G0-KAW"/>
+                            <constraint firstItem="aWj-xh-Fyh" firstAttribute="top" secondItem="XAs-Lw-gKm" secondAttribute="bottom" constant="5" id="imn-9E-JwA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aWj-xh-Fyh" secondAttribute="trailing" constant="-20" id="isV-2t-J7x"/>
+                            <constraint firstItem="5aD-FJ-MtE" firstAttribute="leading" secondItem="c05-15-fH5" secondAttribute="leading" id="ta7-uO-qL2"/>
+                            <constraint firstItem="chd-by-Fa8" firstAttribute="top" secondItem="5aD-FJ-MtE" secondAttribute="bottom" id="yTK-vs-SxD"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="8c8-gi-hTy"/>
+                                <exclude reference="BKf-CM-Rgc"/>
+                                <exclude reference="RwX-Qx-kxO"/>
+                                <exclude reference="isV-2t-J7x"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="mainTB" destination="aWj-xh-Fyh" id="bkT-Bj-qeI"/>
+                        <outlet property="noShowView" destination="5aD-FJ-MtE" id="b49-AR-LLO"/>
+                        <outlet property="segementControl" destination="XAs-Lw-gKm" id="hgC-rK-QNy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z1k-3b-CSJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="589" y="67"/>
+        </scene>
+    </scenes>
+</document>

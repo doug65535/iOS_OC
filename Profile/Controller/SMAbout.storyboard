@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ERy-Op-bim">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--About View Controller-->
+        <scene sceneID="SOD-o8-OIO">
+            <objects>
+                <viewController id="ERy-Op-bim" customClass="SMAboutViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cdY-P4-CKc"/>
+                        <viewControllerLayoutGuide type="bottom" id="OBR-do-5wQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UpX-xr-xWT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dwD-sx-U8D">
+                                <string key="text">    联系电话：010 -59896993
+      周一至周五：8:30-17:30      
+         官方微博：@地图慧
+         官方微信：dituhui</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="©2016 地图慧 All Rights Reversed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oqX-ln-NL3">
+                                <frame key="frameInset" minX="184" minY="552" width="232" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-60" translatesAutoresizingMaskIntoConstraints="NO" id="uTH-3S-YoA">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="a0T-FA-Zvn"/>
+                                    <constraint firstAttribute="width" constant="60" id="lpU-lw-POY"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="地图慧1.1.5" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1AP-up-sEs">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="uTH-3S-YoA" firstAttribute="top" secondItem="cdY-P4-CKc" secondAttribute="bottom" constant="100" id="AJ4-vi-owO"/>
+                            <constraint firstItem="dwD-sx-U8D" firstAttribute="top" secondItem="1AP-up-sEs" secondAttribute="bottom" constant="40" id="Mhp-cI-HZp"/>
+                            <constraint firstItem="1AP-up-sEs" firstAttribute="top" secondItem="uTH-3S-YoA" secondAttribute="bottom" constant="30" id="U36-yq-0RB"/>
+                            <constraint firstAttribute="centerX" secondItem="oqX-ln-NL3" secondAttribute="centerX" id="Ut7-ky-Isp"/>
+                            <constraint firstItem="uTH-3S-YoA" firstAttribute="top" secondItem="UpX-xr-xWT" secondAttribute="topMargin" constant="40" id="hj7-La-JQE"/>
+                            <constraint firstAttribute="centerX" secondItem="1AP-up-sEs" secondAttribute="centerX" id="n8U-pW-6Rx"/>
+                            <constraint firstItem="OBR-do-5wQ" firstAttribute="top" secondItem="oqX-ln-NL3" secondAttribute="bottom" constant="30" id="y24-aW-z5W"/>
+                            <constraint firstAttribute="centerX" secondItem="dwD-sx-U8D" secondAttribute="centerX" id="yZG-tv-WYb"/>
+                            <constraint firstAttribute="centerX" secondItem="uTH-3S-YoA" secondAttribute="centerX" id="ycd-ud-v5g"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="hj7-La-JQE"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="aboutVersion" destination="1AP-up-sEs" id="Ftd-Ok-IOh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="84G-Vj-6tw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="10" y="163"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Icon-60" width="60" height="60"/>
+    </resources>
+</document>

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="910-AO-MB0">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Photo Selected View Controller-->
+        <scene sceneID="B3f-rd-qB4">
+            <objects>
+                <collectionViewController id="KKf-7J-gOZ" customClass="SMPhotoSelectedViewController" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="yFp-fb-Zoe">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="120"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="g2u-Ds-ofn">
+                            <size key="itemSize" width="70" height="70"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="photoCell" id="kK0-Zv-BJK" customClass="SMPhotoSelectedCell">
+                                <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I72-y1-uuW">
+                                            <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                            <state key="normal" backgroundImage="compose_pic_add">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <state key="highlighted" backgroundImage="compose_pic_add_highlighted"/>
+                                            <connections>
+                                                <action selector="addPhoto:" destination="kK0-Zv-BJK" eventType="touchUpInside" id="jaM-3b-Vrr"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZwD-HF-0aF">
+                                            <rect key="frame" x="42" y="42" width="28" height="28"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="28" id="3X5-6Y-H4h"/>
+                                                <constraint firstAttribute="height" constant="28" id="paR-SS-sFa"/>
+                                            </constraints>
+                                            <state key="normal" backgroundImage="del_photo">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="deletePhoto:" destination="kK0-Zv-BJK" eventType="touchUpInside" id="0zG-5q-eYM"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="I72-y1-uuW" firstAttribute="top" secondItem="kK0-Zv-BJK" secondAttribute="top" id="6os-Iy-au5"/>
+                                    <constraint firstItem="I72-y1-uuW" firstAttribute="leading" secondItem="kK0-Zv-BJK" secondAttribute="leading" id="JlS-Vf-YCi"/>
+                                    <constraint firstAttribute="bottom" secondItem="ZwD-HF-0aF" secondAttribute="bottom" id="PrJ-Q4-GpB"/>
+                                    <constraint firstAttribute="bottom" secondItem="I72-y1-uuW" secondAttribute="bottom" id="uBF-XZ-y6C"/>
+                                    <constraint firstAttribute="trailing" secondItem="I72-y1-uuW" secondAttribute="trailing" id="xaF-gL-ofX"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZwD-HF-0aF" secondAttribute="trailing" id="y1Y-bw-tD5"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="deleteBtn" destination="ZwD-HF-0aF" id="G8Q-gz-310"/>
+                                    <outlet property="iconBtn" destination="I72-y1-uuW" id="4v1-wu-0r2"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="KKf-7J-gOZ" id="Ylo-ao-ibw"/>
+                            <outlet property="delegate" destination="KKf-7J-gOZ" id="TTG-cB-MMo"/>
+                        </connections>
+                    </collectionView>
+                    <connections>
+                        <outlet property="layout" destination="g2u-Ds-ofn" id="475-fO-nRZ"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="STo-A4-BoL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1318" y="-841"/>
+        </scene>
+        <!--Compose View Controller-->
+        <scene sceneID="teF-AL-wOV">
+            <objects>
+                <viewController id="910-AO-MB0" customClass="SMMComposeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eba-0u-3YO"/>
+                        <viewControllerLayoutGuide type="bottom" id="qoR-69-g6c"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2b7-zF-VGj">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="db9-UM-wSY" userLabel="输入框" customClass="SMInputTextView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="140"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="2j3-8R-Wav"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hjH-PY-ZfL" userLabel="请点击插入标签">
+                                <rect key="frame" x="0.0" y="303" width="600" height="40"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="VvO-JA-VCz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="15"/>
+                                <state key="normal" title="添加标签" image="create_tag">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="biaoqianBtn:" destination="910-AO-MB0" eventType="touchUpInside" id="dDW-dO-JFq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hKI-TH-lNv">
+                                <rect key="frame" x="0.0" y="262" width="600" height="40"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="8fe-JO-seQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="STHeitiTC-Light" family="Heiti TC" pointSize="15"/>
+                                <state key="normal" title="请点击插入位置" image="create_location">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="loctePresent:" destination="910-AO-MB0" eventType="touchUpInside" id="uzh-Lc-MO7"/>
+                                </connections>
+                            </button>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oii-9p-UfT">
+                                <rect key="frame" x="0.0" y="140" width="600" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="mTf-D1-jBS"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="KKf-7J-gOZ" kind="embed" identifier="1" id="Dnf-bO-gCS"/>
+                                </connections>
+                            </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vUs-15-xtK" customClass="ZFTokenField">
+                                <rect key="frame" x="0.0" y="351" width="600" height="249"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="vUs-15-xtK" firstAttribute="top" secondItem="hjH-PY-ZfL" secondAttribute="bottom" constant="8" id="2j8-va-0yK"/>
+                            <constraint firstItem="hKI-TH-lNv" firstAttribute="top" secondItem="hjH-PY-ZfL" secondAttribute="bottom" id="4wV-uZ-YfH"/>
+                            <constraint firstItem="oii-9p-UfT" firstAttribute="leading" secondItem="2b7-zF-VGj" secondAttribute="leading" id="FHb-2k-34Y"/>
+                            <constraint firstAttribute="trailing" secondItem="db9-UM-wSY" secondAttribute="trailing" id="Fow-oL-t2t"/>
+                            <constraint firstItem="hjH-PY-ZfL" firstAttribute="top" secondItem="oii-9p-UfT" secondAttribute="bottom" id="HK6-CO-hEy"/>
+                            <constraint firstAttribute="trailing" secondItem="hjH-PY-ZfL" secondAttribute="trailing" id="JRH-ta-FcB"/>
+                            <constraint firstItem="db9-UM-wSY" firstAttribute="leading" secondItem="2b7-zF-VGj" secondAttribute="leading" id="LBK-ey-1f8"/>
+                            <constraint firstItem="hKI-TH-lNv" firstAttribute="top" secondItem="oii-9p-UfT" secondAttribute="bottom" constant="2" id="LCF-Hq-rMj"/>
+                            <constraint firstItem="hjH-PY-ZfL" firstAttribute="top" secondItem="hKI-TH-lNv" secondAttribute="bottom" constant="1" id="Mf9-8I-DpB"/>
+                            <constraint firstItem="qoR-69-g6c" firstAttribute="top" secondItem="vUs-15-xtK" secondAttribute="bottom" id="Pnw-Lc-yvV"/>
+                            <constraint firstAttribute="trailing" secondItem="vUs-15-xtK" secondAttribute="trailing" id="Ppr-f6-tWJ"/>
+                            <constraint firstItem="oii-9p-UfT" firstAttribute="top" secondItem="db9-UM-wSY" secondAttribute="bottom" id="ViH-WH-ylZ"/>
+                            <constraint firstItem="db9-UM-wSY" firstAttribute="top" secondItem="2b7-zF-VGj" secondAttribute="top" id="XJg-nv-MiB"/>
+                            <constraint firstItem="vUs-15-xtK" firstAttribute="leading" secondItem="2b7-zF-VGj" secondAttribute="leading" id="d7l-wZ-6Me"/>
+                            <constraint firstItem="oii-9p-UfT" firstAttribute="top" secondItem="db9-UM-wSY" secondAttribute="bottom" constant="10" id="dhB-0O-Ko9"/>
+                            <constraint firstAttribute="trailing" secondItem="oii-9p-UfT" secondAttribute="trailing" id="eb4-3T-oBp"/>
+                            <constraint firstAttribute="trailing" secondItem="hKI-TH-lNv" secondAttribute="trailing" id="ilz-te-dG1"/>
+                            <constraint firstItem="hKI-TH-lNv" firstAttribute="leading" secondItem="2b7-zF-VGj" secondAttribute="leading" id="kmn-TE-sFO"/>
+                            <constraint firstItem="qoR-69-g6c" firstAttribute="top" secondItem="hKI-TH-lNv" secondAttribute="bottom" constant="44" id="pfb-Fq-UyP"/>
+                            <constraint firstItem="hjH-PY-ZfL" firstAttribute="leading" secondItem="2b7-zF-VGj" secondAttribute="leading" id="uvb-0d-4pS"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="dhB-0O-Ko9"/>
+                                <exclude reference="4wV-uZ-YfH"/>
+                                <exclude reference="HK6-CO-hEy"/>
+                                <exclude reference="pfb-Fq-UyP"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="ZFTokenView" destination="vUs-15-xtK" id="Jd0-QB-lHl"/>
+                        <outlet property="biaoqianBtn" destination="hjH-PY-ZfL" id="HP1-9l-ro5"/>
+                        <outlet property="inputView" destination="db9-UM-wSY" id="LiV-jJ-Wzs"/>
+                        <outlet property="locteBtn" destination="hKI-TH-lNv" id="5kg-Ev-98u"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SVg-qV-Vqy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2083" y="-781"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="compose_pic_add" width="70" height="70"/>
+        <image name="compose_pic_add_highlighted" width="70" height="70"/>
+        <image name="create_location" width="22" height="22"/>
+        <image name="create_tag" width="22" height="22"/>
+        <image name="del_photo" width="35" height="35"/>
+    </resources>
+</document>

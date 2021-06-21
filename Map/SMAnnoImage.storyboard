@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TmH-J5-TKs">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Anno Image View Controller-->
+        <scene sceneID="mDg-Sy-XV9">
+            <objects>
+                <viewController id="TmH-J5-TKs" customClass="SMAnnoImageViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Vkt-rA-vEH"/>
+                        <viewControllerLayoutGuide type="bottom" id="joj-IM-yFd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Lzu-si-nXi">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DYb-ba-jcf">
+                                <rect key="frame" x="0.0" y="20" width="600" height="100"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FwN-eo-7Y0">
+                                        <rect key="frame" x="290" y="35" width="20" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="680-SK-VMR"/>
+                                            <constraint firstAttribute="height" constant="30" id="Hke-m8-HEe"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loding" translatesAutoresizingMaskIntoConstraints="NO" id="qn2-bD-Cgf">
+                                        <rect key="frame" x="250" y="18" width="100" height="64"/>
+                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="Ax7-74-R1U"/>
+                                            <constraint firstAttribute="height" constant="64" id="pxE-FC-LKh"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="FwN-eo-7Y0" firstAttribute="centerY" secondItem="DYb-ba-jcf" secondAttribute="centerY" id="0Fq-dh-X8y"/>
+                                    <constraint firstItem="qn2-bD-Cgf" firstAttribute="centerX" secondItem="DYb-ba-jcf" secondAttribute="centerX" id="Qkc-r7-DDj"/>
+                                    <constraint firstItem="qn2-bD-Cgf" firstAttribute="centerY" secondItem="DYb-ba-jcf" secondAttribute="centerY" id="RsE-VC-hAo"/>
+                                    <constraint firstItem="FwN-eo-7Y0" firstAttribute="centerX" secondItem="DYb-ba-jcf" secondAttribute="centerX" id="rC7-C9-bRS"/>
+                                    <constraint firstAttribute="height" constant="100" id="weC-Db-1PL"/>
+                                </constraints>
+                            </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="eRm-dV-PV7">
+                                <rect key="frame" x="20" y="128" width="560" height="29"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <segments>
+                                    <segment title="颜色"/>
+                                    <segment title="图案"/>
+                                    <segment title="大小"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segementClick:" destination="TmH-J5-TKs" eventType="valueChanged" id="knb-zX-sgv"/>
+                                </connections>
+                            </segmentedControl>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mvw-Sg-daD">
+                                <rect key="frame" x="20" y="176" width="560" height="404"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Kbv-9o-1w3">
+                                    <size key="itemSize" width="101" height="90"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="ybi-es-P2h" customClass="SMAnnoImageCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="101" height="90"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="101" height="90"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tuo-db-OVl">
+                                                    <rect key="frame" x="0.0" y="0.0" width="101" height="90"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="tuo-db-OVl" secondAttribute="bottom" id="2ZY-8w-kle"/>
+                                            <constraint firstItem="tuo-db-OVl" firstAttribute="top" secondItem="ybi-es-P2h" secondAttribute="top" id="DJM-aq-cN3"/>
+                                            <constraint firstAttribute="trailing" secondItem="tuo-db-OVl" secondAttribute="trailing" id="Evg-Ng-FYf"/>
+                                            <constraint firstItem="tuo-db-OVl" firstAttribute="leading" secondItem="ybi-es-P2h" secondAttribute="leading" id="QK9-5M-lnc"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="annoImage" destination="tuo-db-OVl" id="os1-Cv-j29"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="mvw-Sg-daD" firstAttribute="leading" secondItem="Lzu-si-nXi" secondAttribute="leadingMargin" id="3hF-jW-SIM"/>
+                            <constraint firstAttribute="trailing" secondItem="DYb-ba-jcf" secondAttribute="trailing" id="4Uw-ip-EOv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mvw-Sg-daD" secondAttribute="trailing" id="7XA-Lp-NW8"/>
+                            <constraint firstItem="joj-IM-yFd" firstAttribute="top" secondItem="mvw-Sg-daD" secondAttribute="bottom" constant="20" id="9Bt-w3-yJr"/>
+                            <constraint firstAttribute="trailing" secondItem="eRm-dV-PV7" secondAttribute="trailing" constant="20" id="BXN-KH-Ql9"/>
+                            <constraint firstItem="DYb-ba-jcf" firstAttribute="top" secondItem="Vkt-rA-vEH" secondAttribute="bottom" id="JW1-kX-oaD"/>
+                            <constraint firstItem="eRm-dV-PV7" firstAttribute="leading" secondItem="Lzu-si-nXi" secondAttribute="leading" constant="20" id="WgX-sc-5Bj"/>
+                            <constraint firstItem="DYb-ba-jcf" firstAttribute="leading" secondItem="Lzu-si-nXi" secondAttribute="leading" id="akD-N3-uEn"/>
+                            <constraint firstItem="eRm-dV-PV7" firstAttribute="top" secondItem="DYb-ba-jcf" secondAttribute="bottom" constant="8" id="b1f-Go-o4e"/>
+                            <constraint firstItem="mvw-Sg-daD" firstAttribute="top" secondItem="eRm-dV-PV7" secondAttribute="bottom" constant="20" id="lgB-dS-kJz"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="annoImageShow" destination="FwN-eo-7Y0" id="KDY-TO-QZu"/>
+                        <outlet property="collectAnnoView" destination="mvw-Sg-daD" id="GEa-zc-Bha"/>
+                        <outlet property="lodingImage" destination="qn2-bD-Cgf" id="xjx-hI-awi"/>
+                        <outlet property="segement" destination="eRm-dV-PV7" id="gHj-nx-qbv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uaO-QW-NtT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="564" y="-2"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="loding" width="100" height="25"/>
+    </resources>
+</document>

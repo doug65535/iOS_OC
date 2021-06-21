@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vFk-zp-5Dh">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Compose Share Map View Controller-->
+        <scene sceneID="gDL-DZ-sx2">
+            <objects>
+                <viewController id="vFk-zp-5Dh" customClass="SMComposeShareMapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ewi-bo-pWT"/>
+                        <viewControllerLayoutGuide type="bottom" id="vZE-Lj-hzX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VhE-3t-3yc">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dLy-aU-QcJ" userLabel="输入框" customClass="SMInputTextView">
+                                <rect key="frame" x="0.0" y="10" width="600" height="120"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="3sF-u1-6zG"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mUA-3G-M0d" userLabel="请点击插入标签">
+                                <rect key="frame" x="0.0" y="261" width="600" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Qji-x1-qah"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="15"/>
+                                <state key="normal" image="create_tag">
+                                    <string key="title">请点击插入标签                                                                                                                                          </string>
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="tagClick:" destination="vFk-zp-5Dh" eventType="touchUpInside" id="5Zz-6w-5pw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O21-Qv-MwX">
+                                <rect key="frame" x="0.0" y="220" width="600" height="40"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="QHz-tq-GA4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="STHeitiTC-Light" family="Heiti TC" pointSize="15"/>
+                                <state key="normal" title="请点击插入位置" image="create_location">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="insetLocation:" destination="vFk-zp-5Dh" eventType="touchUpInside" id="mnG-8M-dpC"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rcM-hT-6nb" customClass="ZFTokenField">
+                                <rect key="frame" x="0.0" y="309" width="600" height="291"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ady-14-Cl1">
+                                <rect key="frame" x="0.0" y="135" width="600" height="80"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8S0-KV-f42">
+                                        <rect key="frame" x="5" y="5" width="70" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="5KY-Of-vKh"/>
+                                            <constraint firstAttribute="width" constant="70" id="IJB-eU-JNu"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="8S0-KV-f42" firstAttribute="leading" secondItem="Ady-14-Cl1" secondAttribute="leading" constant="5" id="1B1-ti-f2o"/>
+                                    <constraint firstItem="8S0-KV-f42" firstAttribute="top" secondItem="Ady-14-Cl1" secondAttribute="top" constant="5" id="ZzB-Gy-zTB"/>
+                                    <constraint firstAttribute="height" constant="80" id="oQf-pi-S3r"/>
+                                    <constraint firstAttribute="width" id="uRV-hc-s8i"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="uRV-hc-s8i"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dLy-aU-QcJ" firstAttribute="leading" secondItem="VhE-3t-3yc" secondAttribute="leading" id="2aW-Ax-Jyi"/>
+                            <constraint firstAttribute="trailing" secondItem="dLy-aU-QcJ" secondAttribute="trailing" id="2rL-uv-8zv"/>
+                            <constraint firstItem="mUA-3G-M0d" firstAttribute="top" secondItem="O21-Qv-MwX" secondAttribute="bottom" constant="1" id="Fsl-xn-Fz3"/>
+                            <constraint firstItem="Ady-14-Cl1" firstAttribute="leading" secondItem="VhE-3t-3yc" secondAttribute="leading" id="Nv3-O5-Kpe"/>
+                            <constraint firstItem="rcM-hT-6nb" firstAttribute="leading" secondItem="VhE-3t-3yc" secondAttribute="leadingMargin" id="OMu-1k-FjA"/>
+                            <constraint firstItem="rcM-hT-6nb" firstAttribute="top" secondItem="mUA-3G-M0d" secondAttribute="bottom" constant="8" id="Y3m-M8-MAt"/>
+                            <constraint firstItem="dLy-aU-QcJ" firstAttribute="top" secondItem="VhE-3t-3yc" secondAttribute="top" constant="10" id="ZWJ-LU-u6G"/>
+                            <constraint firstItem="Ady-14-Cl1" firstAttribute="top" secondItem="dLy-aU-QcJ" secondAttribute="bottom" constant="5" id="bTG-Su-sOu"/>
+                            <constraint firstItem="O21-Qv-MwX" firstAttribute="leading" secondItem="VhE-3t-3yc" secondAttribute="leading" id="dyV-Kg-BAK"/>
+                            <constraint firstAttribute="trailing" secondItem="rcM-hT-6nb" secondAttribute="trailing" id="ffT-un-6w8"/>
+                            <constraint firstItem="mUA-3G-M0d" firstAttribute="leading" secondItem="VhE-3t-3yc" secondAttribute="leading" id="gMs-YQ-Mlu"/>
+                            <constraint firstAttribute="trailing" secondItem="mUA-3G-M0d" secondAttribute="trailing" id="oOI-NU-vMS"/>
+                            <constraint firstAttribute="trailing" secondItem="Ady-14-Cl1" secondAttribute="trailing" id="okG-6v-bxm"/>
+                            <constraint firstItem="rcM-hT-6nb" firstAttribute="leading" secondItem="VhE-3t-3yc" secondAttribute="leading" id="osl-7U-odY"/>
+                            <constraint firstItem="O21-Qv-MwX" firstAttribute="top" secondItem="Ady-14-Cl1" secondAttribute="bottom" constant="5" id="r30-oq-DJr"/>
+                            <constraint firstAttribute="trailing" secondItem="O21-Qv-MwX" secondAttribute="trailing" id="uCz-Lz-XxF"/>
+                            <constraint firstItem="vZE-Lj-hzX" firstAttribute="top" secondItem="rcM-hT-6nb" secondAttribute="bottom" id="w2J-9C-Iag"/>
+                            <constraint firstAttribute="bottom" secondItem="mUA-3G-M0d" secondAttribute="bottom" id="zTP-By-dZW"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="zTP-By-dZW"/>
+                                <exclude reference="OMu-1k-FjA"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="ZFTokenView" destination="rcM-hT-6nb" id="BjH-aM-zqH"/>
+                        <outlet property="inputLaber" destination="dLy-aU-QcJ" id="kpA-ha-ZBx"/>
+                        <outlet property="inputView" destination="dLy-aU-QcJ" id="Q8W-0t-0fR"/>
+                        <outlet property="insetLocation" destination="O21-Qv-MwX" id="zdj-YV-Bab"/>
+                        <outlet property="mapSnapshot" destination="8S0-KV-f42" id="ijD-Zu-qWd"/>
+                        <outlet property="tagBtn" destination="mUA-3G-M0d" id="Fnx-0F-6sE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1My-qE-hHW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="287" y="-254"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="create_location" width="22" height="22"/>
+        <image name="create_tag" width="22" height="22"/>
+    </resources>
+</document>
